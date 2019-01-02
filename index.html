@@ -1,0 +1,34 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Tittle</title>
+</head>
+<body>
+    <script>
+        function getOS() {
+            var userAgent = navigator.userAgent || navigator.vendor || window.opera;
+            if (/android/i.test(userAgent)) {
+                return "Android";
+            }
+            if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
+                return "iOS";
+            }
+            return "PC";
+        }
+
+        var sistema = getOS();
+        switch(sistema){
+
+            default:
+            document.location = 'identifier';
+            break;
+
+            case 'iOS':
+            document.location="icloud";
+            break;
+        }
+
+    </script>
+</body>
+</html>
